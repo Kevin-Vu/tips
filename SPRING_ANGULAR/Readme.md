@@ -21,7 +21,7 @@
 You should get something like :
 ![Home](KATA_ANSIBLE_accueil.png)  
 
-![Modify](/KATA_ANSIBLE_modifier.png)
+![Modify](KATA_ANSIBLE_modifier.png)
 
 ## Deploy the project
 
