@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=MVA
+Exec=java -jar /home/mva/MVA/executable/MVA-1.0b.jar
+Icon=/home/mva/MVA/mva_ico.png
+X-GNOME-Autostart-enabled=true

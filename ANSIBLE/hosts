@@ -1,0 +1,3 @@
+[somename]
+vmipaddress ansible_connection=ssh ansible_ssh_user=vmusername ansible_ssh_pass=vmpassword ansible_python_interpreter=/usr/bin/python3
+

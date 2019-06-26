@@ -1,0 +1,64 @@
+---
+- hosts: somename
+  become: true
+  
+  tasks:
+
+    - name: Install add-apt-repostory
+      become: yes
+      apt: name=software-properties-common state=latest
+
+    - name: Add Oracle Java Repository
+      become: yes
+      apt_repository: repo='ppa:webupd8team/java'
+
+    - name: Accept Java 8 License
+      become: yes
+      debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+    - name: Install Oracle Java 8
+      become: yes
+      apt: name={{item}} state=latest
+      with_items:
+        - oracle-java8-installer
+        - ca-certificates
+        - oracle-java8-set-default
+
+    - name: Add environment java variable
+      blockinfile:
+        path: /etc/environment
+        marker: "## {mark} added by Ansible (java) "
+        content: "JAVA_HOME=\"/usr/lib/jvm/java-8-oracle\""
+
+    - name: Update and Upgrade apt-packages
+      apt:
+        upgrade: yes
+        update_cache: yes 
+
+    - name: Install LibreOffice Calc      
+      apt:
+        name: libreoffice-calc
+        state: present
+
+    - name: Create MVA folder
+      file: 
+        path: "{{ item }}"
+        state: directory
+        mode: "u=rwx,g=rwx,o=rwx"
+      with_items:
+        - /home/mva/MVA/executable
+
+    - name: Copy MVA jar & MVA icon
+      copy: src={{ item.src }} dest={{ item.dest }} mode=u+rwx,g+rwx,o+rwx
+      with_items:
+        - {src: 'MVA-1.0b.jar', dest: '/home/mva/MVA/executable'}
+        - {src: 'mva_ico.png', dest: '/home/mva/MVA'}
+        - {src: 'mva.desktop', dest: '/home/mva/MVA/executable'}
+        - {src: 'mva.desktop', dest: '/usr/share/applications'}
+        - {src: 'mva_auto.desktop', dest: '/home/mva/.config/autostart'}
+        - {src: 'mva_auto.desktop', dest: '/home/mva/MVA/executable'}
+
+    - name: Set favorite-apps
+      become: false
+      shell: gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'mva.desktop', 'libreoffice-calc.desktop', 'org.gnome.Nautilus.desktop']"    
+

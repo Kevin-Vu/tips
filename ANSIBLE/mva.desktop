@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=firefox http://localhost:8080
+Name=MVA
+Icon=/home/mva/MVA/mva_ico.png
+Terminal=false
