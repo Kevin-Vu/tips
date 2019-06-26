@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <!-- --------------------------------------------------------------------------------- -->
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Employés</h1>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-2">
+              <!-- ----------------------- Bouton créer nouvel employé --------------------- -->
+            <button type="button" class="btn btn-primary" (click)="redirectNewEmployePage()">
+              Nouvel employé
+            </button>
+            <!-- ------------------------------------------------------------------------- -->
+            </div>
+          </div>
+        </header>
+        <!-- --------------------------------------------------------------------------------- -->
+      </section>
+ 
+      <section class="main">
+        <!-- --------------------------------------------------------------------------------- -->
+        <table class="table"> <!-- ----- Tableau employés ------------------------------------- -->
+          <!-- --------------------------------------------------------------------------------- -->
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Age</th>
+              <th>Salaire</th>
+            </tr>
+          </thead>
+          <!-- --------------------------------------------------------------------------------- -->
+          <tbody> <!-- ----- Parcourt la liste des employés ------------------------------------- -->
+            <tr *ngFor="let employe of employes">
+              <th scope="row">{{employe.id}}</th>
+              <td>{{employe.nom}}</td>
+              <td>{{employe.prenom}}</td>
+              <td>{{employe.age}}</td>
+              <td>{{employe.salaire}}</td>
+              <td>
+                <button type="button" class="btn btn-success" (click)="editEmployePage(employe)">Editer</button>
+                <button type="button" class="btn btn-danger" (click)="deleteEmploye(employe)">Supprimer</button>
+              </td>
+            </tr>
+          </tbody>
+          <!-- --------------------------------------------------------------------------------- -->
+        </table>
+        <!-- --------------------------------------------------------------------------------- -->
+      </section>
+    </div>
+  </div>
+</div> 
