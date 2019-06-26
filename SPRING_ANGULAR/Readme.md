@@ -1,5 +1,6 @@
 # Create a simple CRUD with Spring and Angular
 
+Start quickly a Spring Angular project.
 (The following CRUD was based on an other online tutorial)
 
 ## Test the project
