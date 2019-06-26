@@ -19,9 +19,9 @@
    
 3. Open a browser and go on **http://localhost:4200**
 You should get something like :
-![Home](front-end/KATA_ANSIBLE_accueil.png)  
+![Home](/front-end/KATA_ANSIBLE_accueil.png)  
 
-![Modify](front-end/KATA_ANSIBLE_modifier.png)
+![Modify](/front-end/KATA_ANSIBLE_modifier.png)
 
 ## Deploy the project
 
