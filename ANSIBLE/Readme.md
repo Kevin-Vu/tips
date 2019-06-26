@@ -1,6 +1,6 @@
 # Virtual Machine Jar Deployement with Ansible
 
-Deploy your app in a ubuntu virtual machine and start it automatically.
+Deploy your jar in a ubuntu virtual machine and start it automatically.
 
 ## Installation
 ```bash
