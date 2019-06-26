@@ -3,9 +3,9 @@
 ### Summary
 1. Install and configure postfix, dovecot and mailutils (**Server**)
 2. Send and receive an email on the same computer with mailutils (**Server -> Server**)
-3. Create an user (email account)  (**Serveur**)
+3. Create an user (email account)  (**Server**)
 4. Send and receive an email through Java from a client to the server machine  (**Client -> Server**) 
-5. Send and receive an email through Thunderbird from a client to the server (**Client <-> Clientr**) 
+5. Send and receive an email through Thunderbird from a client to the server (**Client <-> Client**) 
 6. Gitlab / Jenkins / SonarQube
 
 ### Install et configure postfix, dovecot and mailutils  (Server side)
